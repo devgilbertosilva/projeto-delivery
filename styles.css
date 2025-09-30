@@ -575,3 +575,20 @@ html, body {
   .hero_title { font-size: 2.5rem; } /* ajusta tamanho do título no mobile */
   .hero_subtitle { font-size: 1.1rem;} /* ajusta subtítulo no mobile */
 }
+
+/* Correção para mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1.2rem; /* dá um pouco mais de respiro lateral */
+  }
+
+  .nav {
+    gap: 1rem; /* espaço entre o menu hamburger e o carrinho */
+  }
+
+  .nav button,
+  .cart {
+    font-size: 1.4rem; /* reduz levemente para caber bem */
+  }
+}
+
