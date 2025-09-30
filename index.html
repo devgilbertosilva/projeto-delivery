@@ -213,6 +213,31 @@
         }, 1000);
       });
     });
+
+    // Seleciona botão e menu
+const navToggle = document.querySelector('.nav_toggle');
+const navMenu = document.querySelector('.nav');
+
+// Alterna menu ao clicar no hamburger
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('nav--active');
+});
+
+// Fecha menu ao clicar fora do header
+document.addEventListener('click', (e) => {
+  const header = document.querySelector('.header');
+  if (!header.contains(e.target)) {
+    navMenu.classList.remove('nav--active');
+  }
+});
+
+// Fecha menu ao clicar em um link
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('nav--active');
+  });
+});
+
   </script>
   </body>
 </html>
