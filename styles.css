@@ -654,3 +654,29 @@ html, body {
   .hero_subtitle { font-size: 1.1rem; }
 }
 
+/* Carrinho desktop visível por padrão */
+.cart-desktop {
+  display: flex; /* visível no desktop */
+}
+
+/* Carrinho dentro do menu mobile escondido no desktop */
+.cart-mobile {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* Carrinho desktop escondido no mobile */
+  .cart-desktop {
+    display: none;
+  }
+
+  /* Carrinho mobile visível dentro do menu */
+  .cart-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
+
+

@@ -292,6 +292,13 @@ body {
     }
 }
 
+/* Esconde apenas o cabeçalho da tabela no mobile */
+@media (max-width: 480px) {
+  .cart-table thead {
+    display: none;
+  }
+}
+
 
 
 
