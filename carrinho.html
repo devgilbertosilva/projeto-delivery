@@ -35,37 +35,73 @@
       <tbody id="itens-carrinho">
         <tr class="item-carrinho" data-preco="34.90">
           <td><img src="img/smash-burger.jpg" alt="Smash Burger"> <span class="nome-item">Smash Burger Artesanal</span></td>
-          <td><input type="number" class="quantidade-input" value="1" min="1"></td>
+          <td>
+            <div class="quantidade-wrapper">
+              <button class="btn-quantidade menos">−</button>
+              <input type="number" class="quantidade-input" value="1" min="1">
+              <button class="btn-quantidade mais">+</button>
+            </div>
+          </td>
           <td>R$ 34,90</td>
           <td><button class="botao-remover"><i class="fas fa-trash"></i></button></td>
         </tr>
         <tr class="item-carrinho" data-preco="29.90">
           <td><img src="img/salada-mediterranea.jpg" alt="Salada Mediterrânea"> <span class="nome-item">Salada Mediterrânea</span></td>
-          <td><input type="number" class="quantidade-input" value="1" min="1"></td>
+          <td>
+            <div class="quantidade-wrapper">
+              <button class="btn-quantidade menos">−</button>
+              <input type="number" class="quantidade-input" value="1" min="1">
+              <button class="btn-quantidade mais">+</button>
+            </div>
+          </td>
           <td>R$ 29,90</td>
           <td><button class="botao-remover"><i class="fas fa-trash"></i></button></td>
         </tr>
         <tr class="item-carrinho" data-preco="49.90">
           <td><img src="img/risoto.jpg" alt="Risoto de Cogumelos"> <span class="nome-item">Risoto de Cogumelos</span></td>
-          <td><input type="number" class="quantidade-input" value="1" min="1"></td>
+          <td>
+            <div class="quantidade-wrapper">
+              <button class="btn-quantidade menos">−</button>
+              <input type="number" class="quantidade-input" value="1" min="1">
+              <button class="btn-quantidade mais">+</button>
+            </div>
+          </td>
           <td>R$ 49,90</td>
           <td><button class="botao-remover"><i class="fas fa-trash"></i></button></td>
         </tr>
         <tr class="item-carrinho" data-preco="39.90">
           <td><img src="img/nhoque.png" alt="Nhoque ao Sugo"> <span class="nome-item">Nhoque ao Sugo</span></td>
-          <td><input type="number" class="quantidade-input" value="1" min="1"></td>
+          <td>
+            <div class="quantidade-wrapper">
+              <button class="btn-quantidade menos">−</button>
+              <input type="number" class="quantidade-input" value="1" min="1">
+              <button class="btn-quantidade mais">+</button>
+            </div>
+          </td>
           <td>R$ 39,90</td>
           <td><button class="botao-remover"><i class="fas fa-trash"></i></button></td>
         </tr>
         <tr class="item-carrinho" data-preco="69.90">
           <td><img src="img/file.jpg" alt="Filé ao Poivre"> <span class="nome-item">Filé ao Poivre</span></td>
-          <td><input type="number" class="quantidade-input" value="1" min="1"></td>
+          <td>
+            <div class="quantidade-wrapper">
+              <button class="btn-quantidade menos">−</button>
+              <input type="number" class="quantidade-input" value="1" min="1">
+              <button class="btn-quantidade mais">+</button>
+            </div>
+          </td>
           <td>R$ 69,90</td>
           <td><button class="botao-remover"><i class="fas fa-trash"></i></button></td>
         </tr>
         <tr class="item-carrinho" data-preco="24.90">
           <td><img src="img/cheesecake.jpg" alt="Cheesecake"> <span class="nome-item">Cheesecake</span></td>
-          <td><input type="number" class="quantidade-input" value="1" min="1"></td>
+          <td>
+            <div class="quantidade-wrapper">
+              <button class="btn-quantidade menos">−</button>
+              <input type="number" class="quantidade-input" value="1" min="1">
+              <button class="btn-quantidade mais">+</button>
+            </div>
+          </td>
           <td>R$ 24,90</td>
           <td><button class="botao-remover"><i class="fas fa-trash"></i></button></td>
         </tr>
@@ -89,65 +125,83 @@
 
   <script>
     // Atualiza ano automaticamente no rodapé
-document.getElementById("ano-atual").textContent = new Date().getFullYear();
+    document.getElementById("ano-atual").textContent = new Date().getFullYear();
 
-const itensCarrinho = document.getElementById('itens-carrinho');
-const totalCarrinho = document.getElementById('total-carrinho');
-const quantidadeCarrinho = document.querySelector('.quantidade-carrinho');
-const botaoFinalizar = document.querySelector('.botao-finalizar');
-const mensagemFinalizacao = document.getElementById('mensagem-finalizacao');
+    const itensCarrinho = document.getElementById('itens-carrinho');
+    const totalCarrinho = document.getElementById('total-carrinho');
+    const quantidadeCarrinho = document.querySelector('.quantidade-carrinho');
+    const botaoFinalizar = document.querySelector('.botao-finalizar');
+    const mensagemFinalizacao = document.getElementById('mensagem-finalizacao');
 
-// Função para atualizar total e contagem
-function atualizarCarrinho() {
-    const itens = itensCarrinho.querySelectorAll('.item-carrinho');
-    let total = 0;
-    let totalItens = 0;
+    // Função para atualizar total e contagem
+    function atualizarCarrinho() {
+        const itens = itensCarrinho.querySelectorAll('.item-carrinho');
+        let total = 0;
+        let totalItens = 0;
 
-    itens.forEach(item => {
-        const preco = parseFloat(item.dataset.preco);
-        const quantidadeInput = item.querySelector('.quantidade-input');
-        const quantidade = parseInt(quantidadeInput.value);
-        const celulaTotal = item.querySelector('td:nth-child(3)');
-        celulaTotal.textContent = `R$ ${(preco * quantidade).toFixed(2)}`;
-        total += preco * quantidade;
-        totalItens += quantidade;
+        itens.forEach(item => {
+            const preco = parseFloat(item.dataset.preco);
+            const quantidadeInput = item.querySelector('.quantidade-input');
+            const quantidade = parseInt(quantidadeInput.value);
+            const celulaTotal = item.querySelector('td:nth-child(3)');
+            celulaTotal.textContent = `R$ ${(preco * quantidade).toFixed(2)}`;
+            total += preco * quantidade;
+            totalItens += quantidade;
+        });
+
+        totalCarrinho.textContent = total.toFixed(2);
+        quantidadeCarrinho.textContent = totalItens;
+    }
+
+    // Listener de quantidade manual
+    itensCarrinho.querySelectorAll('.quantidade-input').forEach(input => {
+        input.addEventListener('input', () => {
+            if(input.value < 1) input.value = 1;
+            atualizarCarrinho();
+        });
     });
 
-    totalCarrinho.textContent = total.toFixed(2);
-    quantidadeCarrinho.textContent = totalItens;
-}
+    // Botões + e -
+    itensCarrinho.querySelectorAll('.quantidade-wrapper').forEach(wrapper => {
+      const input = wrapper.querySelector('.quantidade-input');
+      const btnMais = wrapper.querySelector('.mais');
+      const btnMenos = wrapper.querySelector('.menos');
 
-// Listener de quantidade
-itensCarrinho.querySelectorAll('.quantidade-input').forEach(input => {
-    input.addEventListener('input', () => {
-        if(input.value < 1) input.value = 1;
+      btnMais.addEventListener('click', () => {
+        input.value = parseInt(input.value) + 1;
         atualizarCarrinho();
+      });
+
+      btnMenos.addEventListener('click', () => {
+        if(parseInt(input.value) > 1){
+          input.value = parseInt(input.value) - 1;
+          atualizarCarrinho();
+        }
+      });
     });
-});
 
-// Botão remover item
-itensCarrinho.querySelectorAll('.botao-remover').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const item = e.target.closest('.item-carrinho');
-        item.remove();
-        atualizarCarrinho();
+    // Botão remover item
+    itensCarrinho.querySelectorAll('.botao-remover').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const item = e.target.closest('.item-carrinho');
+            item.remove();
+            atualizarCarrinho();
+        });
     });
-});
 
-// Inicializa contagem
-atualizarCarrinho();
+    // Inicializa contagem
+    atualizarCarrinho();
 
-// Finalizar compra
-botaoFinalizar.addEventListener('click', () => {
-    if(itensCarrinho.children.length === 0) return; // Nenhum item
-    mensagemFinalizacao.classList.add('show');
-    setTimeout(() => {
-        mensagemFinalizacao.classList.remove('show');
-    }, 4000);
-});
+    // Finalizar compra
+    botaoFinalizar.addEventListener('click', () => {
+        if(itensCarrinho.children.length === 0) return;
+        mensagemFinalizacao.classList.add('show');
+        setTimeout(() => {
+            mensagemFinalizacao.classList.remove('show');
+        }, 4000);
+    });
 
   </script>
 </body>
 </html>
-
 

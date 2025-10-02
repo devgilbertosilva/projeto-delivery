@@ -192,6 +192,26 @@ body {
     border-color: var(--secondary);
 }
 
+/* Botões de incremento/decremento */
+.quantidade-btn {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    transition: background 0.2s;
+}
+.quantidade-btn:hover {
+    background: var(--primary);
+}
+
 /* Botão remover */
 .botao-remover {
     background: transparent;
@@ -288,7 +308,7 @@ body {
         gap: 0.5rem;
     }
     .nome-item {
-        max-width: 100%;
+        display: none;
     }
 }
 
@@ -299,61 +319,122 @@ body {
   }
 }
 
+/* Botões de incremento/decremento */
+.quantidade-btn {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    transition: background 0.2s;
+}
+/* Ajuste de espaçamento da tabela */
+.cart-table th,
+.cart-table td {
+    padding: 0.5rem 0.8rem; /* reduz um pouco o padding superior/inferior */
+    text-align: left;
+    word-wrap: break-word;
+}
+
+/* Ajusta a célula do produto */
+.cart-table td:first-child {
+    display: flex;           /* para alinhar imagem e texto */
+    align-items: center;     /* centraliza verticalmente */
+    gap: 0.5rem;             /* espaço entre imagem e nome */
+    padding-left: 0.3rem;    /* empurra toda a célula um pouco para a esquerda */
+}
+
 /* ===========================
-   Ajustes de carrinho para smartphones
+   BOTÕES DE QUANTIDADE
+   =========================== */
+.quantidade-btn {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    transition: background 0.2s, transform 0.2s;
+}
+.quantidade-btn:hover {
+    background: #63b3ed; /* azul mais suave no hover */
+    transform: scale(1.1);
+}
+
+/* Botão remover */
+.botao-remover {
+    background: #ffe5e5; /* vermelho suave */
+    color: #ff4d4d;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.botao-remover:hover {
+    background: #ffcccc; /* hover mais suave */
+    transform: scale(1.05);
+}
+
+/* ===========================
+   RESPONSIVIDADE PARA MOBILE
    =========================== */
 @media (max-width: 480px) {
-    /* Esconde a descrição do item */
-    .nome-item {
-        display: none;
+    .quantidade-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 1rem;
     }
 
-    /* Ajusta imagem para caber melhor */
-    .cart-table td img {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Encolhe input de quantidade */
-    .quantidade-input {
-        width: 35px;
-        padding: 0.2rem;
+    .botao-remover {
+        padding: 0.2rem 0.4rem;
         font-size: 0.85rem;
-    }
-
-    /* Ajusta padding das células para serem mais compactas */
-    .cart-table td {
-        padding: 0.4rem 0.3rem; /* vertical 0.4rem / horizontal 0.3rem */
-    }
-
-    /* Alinha melhor o valor dentro da célula */
-    .cart-table td:nth-child(3) {
-        text-align: right; /* mantém o R$ alinhado à direita */
-        font-size: 0.9rem;
-    }
-
-    /* Footer do carrinho mais compacto */
-    .carrinho-rodape {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: stretch;
     }
 }
 
+/* ===========================
+   BOTÕES DE QUANTIDADE
+   =========================== */
+.quantidade-btn {
+    background: #d1d5db; /* cinza claro discreto */
+    color: #1e293b; /* texto escuro para contraste */
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    transition: background 0.2s, transform 0.2s;
+}
+.quantidade-btn:hover {
+    background: #a1aab4; /* cinza um pouco mais escuro no hover */
+    transform: scale(1.1);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 480px) {
+    .quantidade-btn {
+        width: 22px;
+        height: 22px;
+        font-size: 1rem;
+        background: #e5e7eb; /* ainda mais discreto */
+    }
+}
 
