@@ -299,6 +299,49 @@ body {
   }
 }
 
+/* ===========================
+   Ajustes de carrinho para smartphones
+   =========================== */
+@media (max-width: 480px) {
+    /* Esconde a descrição do item */
+    .nome-item {
+        display: none;
+    }
+
+    /* Ajusta imagem para caber melhor */
+    .cart-table td img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Encolhe input de quantidade */
+    .quantidade-input {
+        width: 35px;
+        padding: 0.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Ajusta padding das células para serem mais compactas */
+    .cart-table td {
+        padding: 0.4rem 0.3rem; /* vertical 0.4rem / horizontal 0.3rem */
+    }
+
+    /* Alinha melhor o valor dentro da célula */
+    .cart-table td:nth-child(3) {
+        text-align: right; /* mantém o R$ alinhado à direita */
+        font-size: 0.9rem;
+    }
+
+    /* Footer do carrinho mais compacto */
+    .carrinho-rodape {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+}
+
+
+
 
 
 
